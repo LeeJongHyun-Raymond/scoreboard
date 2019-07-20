@@ -4,6 +4,8 @@ import {Header} from "./components/Header";
 import {Player} from "./components/Player";
 
 class App extends React.Component {
+    // Lifting UP : 카운터 컴포넌트가 갖고 있는 로컬 state를 최상단 부모로 올리기
+    // 로직을 구현하기 위해서 Lifting UP이 필요
   state = {
     players: [
       {name: 'LDK', score: 30, id: 1},
@@ -22,7 +24,8 @@ class App extends React.Component {
             this.state.players.map((player) =>
                 <Player name={player.name} score={player.score}
                         id={player.id} key={player.id}
-                        removePlayer={this.handleRemovePlayer}/>)
+                        removePlayer={this.handleRemovePlayer}
+                        changeScore={this.handleChangeScore}/>)
           }
         </div>
     )
@@ -35,6 +38,10 @@ class App extends React.Component {
           players: prevState.players.filter(player => player.id !== id)
         })
     )
+  }
+
+  handleChangeScore = (id, delta) => {
+      console.log('handleChangeScore : ', id, delta);
   }
 }
 

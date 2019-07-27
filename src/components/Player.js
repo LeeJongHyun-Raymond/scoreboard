@@ -15,7 +15,27 @@ import {Counter} from './Counter';
 //
 // }
 
-export class Player extends React.PureComponent{
+// export class Player extends React.PureComponent{
+//     render() {
+//         const {name, score, removePlayer, id, changeScore} = this.props;
+//
+//         console.log(name,'rendered');
+//
+//         return (
+//             <div className="player">
+// 			<span className="player-name">
+// 				<button className="remove-player" onClick={() => removePlayer(id)}>x</button>
+//                 {name}
+// 			</span>
+//                 <Counter score={score} changeScore={changeScore} id={id}/>
+//             </div>
+//         );
+//     }
+//
+//
+// }
+
+export class Player extends React.Component{
     render() {
         const {name, score, removePlayer, id, changeScore} = this.props;
 
@@ -40,4 +60,5 @@ export class Player extends React.PureComponent{
         // console.log('shouldComponentUpdate : ',nextProps);
         return this.props.score !== nextProps.score ? true : false;
     }
+
 }

@@ -31,4 +31,13 @@ export class Player extends React.PureComponent{
             </div>
         );
     }
+
+    componentWillReceiveProps(nextProps, nextContext) {
+        // console.log('componentWillReceiveProps : ',nextProps);
+    }
+
+    shouldComponentUpdate(nextProps, nextState, nextContext) {
+        // console.log('shouldComponentUpdate : ',nextProps);
+        return this.props.score !== nextProps.score ? true : false;
+    }
 }

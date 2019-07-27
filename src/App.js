@@ -32,7 +32,6 @@ class App extends React.Component {
           }
           <AddPlayerForm addPlayer={this.handleAddPlayer}/>
         </div>
-
     )
   }
 
